@@ -1,57 +1,43 @@
-# World Happiness Data Visualisation Project  
-Assessment Project – Data Visualisation (CMP-X302-0)
+# World Happiness – Regional Interpretation of Well-Being
 
-## Overview  
-This repository contains the full implementation of the Data Visualisation coursework, including a structured Jupyter Notebook, dataset, and supporting files.  
-The analysis is based on the **World Happiness Report** dataset and follows a complete workflow covering data preparation, exploratory data analysis (EDA), research question formulation, visualisation design, and interpretation.
+This repository contains the preprocessing pipeline for the World Happiness dataset used in the Data Visualisation coursework.
 
-## Repository Structure  
-project-folder/
-│
-├── README.md
-├── dataset/
-│ └── world-happiness-report.csv
-├── notebook/
-│ └── notebook.ipynb
-└── images/
-└── exported_figures.png / .jpg
-└── docs/
-└── Documents
+## Current Status
 
-## Notebook Features  
-- Clear workflow with Markdown explanations and code separation
-- Data preparation and cleaning
-- Exploratory data analysis
-- Formulation and justification of research questions
-- High-quality visualisations using Python libraries (Matplotlib, Seaborn, etc.)
-- Interpretation of patterns and insights
-- Reproducible and executable code suitable for university machines (Python 3.10+)
+The preprocessing stage is **complete and locked**.  
+All steps are reproducible and designed to minimise bias before analysis.
 
-## Requirements  
-The notebook uses common Python libraries:
+### What has been implemented
 
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scipy
+- **Column standardisation**  
+  Renamed variables for clarity and consistency.
 
-## Assessment Deliverables
-This repository contributes to the following required components:
+- **Temporal coverage assessment**  
+  Evaluated year availability per country to understand reporting gaps.
 
-- 2,500-word report
-- Python implementation (.ipynb) included in this repo
-- 5–7 minute screen recording demonstrating code execution
+- **Data-driven temporal filtering**  
+  Selected an optimal contiguous time window and retained only countries with sufficient year coverage.
 
-These materials collectively meet the assessment criteria defined in the module brief.
+- **Structural data cleaning**
+  - Removed countries with irreparable missingness (e.g. South Sudan).
+  - Dropped variables with systemic regional gaps (e.g. corruption).
 
-## Dataset
-The dataset used for this project is the World Happiness Report  
-It must be stored in the same directory as the Jupyter Notebook when executed on university machines.
+- **Within-country interpolation**  
+  Applied linear interpolation across time for numeric indicators, strictly within each country.
 
-## Academic Integrity
-The project follows Roehampton University guidelines on the ethical use of AI tools. 
-Any AI assistance used in the creation of the project must be acknowledged in the report submission.
+- **Transparency & reproducibility**
+  - Final cleaned dataset exported (`world_happiness_final.csv`)
+  - All excluded country-level records preserved separately (`excluded.csv`)
 
-## License
-This repository is for academic assessment purposes only.
+The preprocessing decisions are visualised and justified within the notebook to ensure clarity and auditability.
+
+## Next Steps (Coming Soon)
+
+- Exploratory Data Analysis (EDA)
+- Definition of final research questions
+- Visualisation-driven analysis and interpretation
+- Storytelling and discussion aligned with coursework requirements
+
+---
+
+This repository will be updated incrementally as analysis progresses.
