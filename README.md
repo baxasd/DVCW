@@ -1,43 +1,40 @@
-# World Happiness – Regional Interpretation of Well-Being
+## 🌍 Global Happiness Analysis — Data Visualisation Project
 
-This repository contains the preprocessing pipeline for the World Happiness dataset used in the Data Visualisation coursework.
+This project explores patterns and inequalities in global happiness using the **World Happiness Report** dataset. The analysis focuses on how economic, social, and institutional factors relate to national happiness scores across different regions of the world.
 
-## Current Status
+The work was completed as part of the **Data Visualisation (CMP-X302-0)** module and combines data preparation, exploratory analysis, and carefully designed visualisations to support data-driven storytelling.
 
-The preprocessing stage is **complete and locked**.  
-All steps are reproducible and designed to minimise bias before analysis.
+### 📊 Project Overview
 
-### What has been implemented
+The notebook:
 
-- **Column standardisation**  
-  Renamed variables for clarity and consistency.
+* Cleans and prepares the World Happiness dataset for analysis
+* Performs exploratory data analysis (EDA) to identify key trends and distributions
+* Formulates research questions grounded in observed patterns
+* Uses multiple visualisation techniques (scatter plots, distributions, correlation views, and comparative plots) to analyse relationships between happiness and its contributing factors
+* Interprets findings in a global and regional context, highlighting disparities and limitations within the data
 
-- **Temporal coverage assessment**  
-  Evaluated year availability per country to understand reporting gaps.
+All visualisations are produced using Python libraries such as **Pandas**, **Matplotlib**, and **Seaborn**, with attention to colour theory, readability, and narrative clarity.
 
-- **Data-driven temporal filtering**  
-  Selected an optimal contiguous time window and retained only countries with sufficient year coverage.
+> ⚠️ The notebook and dataset must remain in the same directory for correct execution, as required by the assessment specification.
 
-- **Structural data cleaning**
-  - Removed countries with irreparable missingness (e.g. South Sudan).
-  - Dropped variables with systemic regional gaps (e.g. corruption).
+### ▶️ How to Run
 
-- **Within-country interpolation**  
-  Applied linear interpolation across time for numeric indicators, strictly within each country.
+1. Ensure Python **3.10+** is installed
+2. Install required libraries:
 
-- **Transparency & reproducibility**
-  - Final cleaned dataset exported (`world_happiness_final.csv`)
-  - All excluded country-level records preserved separately (`excluded.csv`)
+   ```
+   pip install pandas matplotlib seaborn numpy
+   ```
+3. Place `world-happiness-report.csv` in the same folder as the notebook
+4. Open and run `Z22590018.ipynb` sequentially in Jupyter Notebook or JupyterLab
 
-The preprocessing decisions are visualised and justified within the notebook to ensure clarity and auditability.
+### 🎯 Learning Outcomes Addressed
 
-## Next Steps (Coming Soon)
+* Selection and application of appropriate visualisation techniques
+* Evaluation of visual effectiveness for analytical tasks
+* Development of clear, data-driven visual narratives
 
-- Exploratory Data Analysis (EDA)
-- Definition of final research questions
-- Visualisation-driven analysis and interpretation
-- Storytelling and discussion aligned with coursework requirements
+### 📌 Notes
 
----
-
-This repository will be updated incrementally as analysis progresses.
+This repository contains the **artefact component** of the coursework. A written report and screen-recorded code presentation accompany this submission separately, as per module requirements.
